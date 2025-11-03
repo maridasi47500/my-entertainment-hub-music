@@ -1,0 +1,2 @@
+class Musicrelease < ApplicationRecord
+end

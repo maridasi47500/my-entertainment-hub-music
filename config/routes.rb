@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
-  get "welcome/index"
+  resources :posts
+  resources :events
+  resources :movies
+  resources :photos
+  resources :videos
+  resources :musicreleases
+  get "posts/title"
+  get "posts/content"
+  get "posts/author"
+  get "posts/pictext"
+  get "posts/pic"
+  get "hi", to:"music#index"
+  get "hey", to: "welcome#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

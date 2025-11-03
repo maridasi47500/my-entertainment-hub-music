@@ -1,0 +1,12 @@
+<% content_for :title, "Editing musicrelease" %>
+
+<h1>Editing musicrelease</h1>
+
+<%= render "form", musicrelease: @musicrelease %>
+
+<br>
+
+<div>
+  <%= link_to "Show this musicrelease", @musicrelease %> |
+  <%= link_to "Back to musicreleases", musicreleases_path %>
+</div>
