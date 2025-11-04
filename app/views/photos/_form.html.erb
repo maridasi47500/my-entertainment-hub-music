@@ -18,22 +18,22 @@
 
   <div>
     <%= form.label :year, style: "display: block" %>
-    <%= form.text_field :year %>
+    <%= form.number_field :year %>
   </div>
 
   <div>
     <%= form.label :location_id, style: "display: block" %>
-    <%= form.number_field :location_id %>
+    <%= form.select :location_id, Location.all.collect {|g|[g.name, g.id]} %>
   </div>
 
   <div>
     <%= form.label :cat_id, style: "display: block" %>
-    <%= form..select :cat_id, Photocat.all.collect {|g|[g.name, g.id]} %>
+    <%= form.select :cat_id, Photocat.all.collect {|g|[g.name, g.id]} %>
   </div>
 
   <div>
     <%= form.label :nationality_id, style: "display: block" %>
-    <%= form.number_field :nationality_id %>
+    <%= form.select :nationality_id, Nationality.all.collect {|g|[g.name, g.id]} %>
   </div>
 
   <div>
