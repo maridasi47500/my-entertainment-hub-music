@@ -1,22 +1,19 @@
 <div id="<%= dom_id musicrelease %>">
   <p>
-    <strong>Title:</strong>
     <%= musicrelease.title %>
   </p>
 
   <p>
-    <strong>Category:</strong>
-    <%= musicrelease.category %>
+    <%= musicrelease.musiccat.try(:name) %>
   </p>
 
   <p>
-    <strong>Content:</strong>
     <%= musicrelease.content %>
   </p>
 
   <p>
     <strong>Pic:</strong>
-    <%= musicrelease.pic %>
+    <img height=100 width=100 src="/uploads/<%= musicrelease.pic %>" />
   </p>
 
 </div>

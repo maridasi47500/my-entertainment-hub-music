@@ -1,0 +1,2 @@
+class Moviecat < ApplicationRecord
+end

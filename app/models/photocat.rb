@@ -1,0 +1,2 @@
+class Photocat < ApplicationRecord
+end

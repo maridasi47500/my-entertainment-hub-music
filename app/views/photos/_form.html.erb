@@ -28,7 +28,7 @@
 
   <div>
     <%= form.label :cat_id, style: "display: block" %>
-    <%= form.number_field :cat_id %>
+    <%= form..select :cat_id, Photocat.all.collect {|g|[g.name, g.id]} %>
   </div>
 
   <div>

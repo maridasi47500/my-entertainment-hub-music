@@ -28,12 +28,12 @@
 
   <div>
     <%= form.label :cat_id, style: "display: block" %>
-    <%= form.number_field :cat_id %>
+    <%= form.select :cat_id, Moviecat.all.collect {|g|[g.name, g.id]} %>
   </div>
 
   <div>
     <%= form.label :pic, style: "display: block" %>
-    <%= form.text_field :pic %>
+    <%= form.file_field :pic %>
   </div>
 
   <div>
