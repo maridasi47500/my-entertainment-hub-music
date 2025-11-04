@@ -3,9 +3,10 @@ class CreatePosts < ActiveRecord::Migration[8.0]
     create_table :posts do |t|
       t.string :title
       t.string :content
-      t.string :author
-      t.string :pictext
       t.string :pic
+      t.string :textpic
+      t.integer :cat_id
+      t.string :written_by
 
       t.timestamps
     end

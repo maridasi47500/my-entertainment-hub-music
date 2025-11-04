@@ -14,3 +14,9 @@
 </div>
 
 <%= link_to "New post", new_post_path %>
+<p>search keyword</p>
+<%=text_field_tag :mypost%>
+<p>search by category</p>
+<%=select_tag :hey, options_for_select(Postcat.all.map(&:name))%>
+<p>search by autor</p>
+<%=select_tag :hi, options_for_select(Post.all.map(&:written_by))%>

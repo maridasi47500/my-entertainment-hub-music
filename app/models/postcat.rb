@@ -1,0 +1,2 @@
+class Postcat < ApplicationRecord
+end

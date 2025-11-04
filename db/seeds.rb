@@ -22,3 +22,6 @@ end
 "afrobeat  calypso  Chutney  Dancehall  Gospel  Reggae  soca  Parang".split("  ").each do |genre_name|
   Musiccat.find_or_create_by!(name: genre_name)
 end
+"book  calypso artist  calypso artist  carnival  dancehall artist  fashion  food  gospel  movie  performing arts  reggae artist  reggae concert  soca artist  soca concert  steelband".split("  ").each do |genre_name|
+  Postcat.find_or_create_by!(name: genre_name)
+end

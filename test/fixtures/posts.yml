@@ -3,13 +3,15 @@
 one:
   title: MyString
   content: MyString
-  author: MyString
-  pictext: MyString
   pic: MyString
+  textpic: MyString
+  cat_id: 1
+  written_by: MyString
 
 two:
   title: MyString
   content: MyString
-  author: MyString
-  pictext: MyString
   pic: MyString
+  textpic: MyString
+  cat_id: 1
+  written_by: MyString
