@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   resources :movies
   resources :photos
   resources :videos
-  resources :musicreleases
+  resources :musicreleases do
+    member do
+      get "addasong"
+    end
+  end
   get "posts/title"
   get "posts/content"
   get "posts/author"
