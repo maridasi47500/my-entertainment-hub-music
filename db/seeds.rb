@@ -25,3 +25,5 @@ end
 "book  calypso artist  calypso artist  carnival  dancehall artist  fashion  food  gospel  movie  performing arts  reggae artist  reggae concert  soca artist  soca concert  steelband".split("  ").each do |genre_name|
   Postcat.find_or_create_by!(name: genre_name)
 end
+Post.create(pictext: "Stars of South winners",pic:"blog1", title: "Stars of South Finals: Youth Talent Shines on the Grand Stage", written_by: "Avelle Brand Management")
+Musicrelease.create(title:"CEH Dec 2023 New Dancehall Releases Spotlights Beenie Man- ‘Chop Suey’")
