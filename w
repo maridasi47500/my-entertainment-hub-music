@@ -53,7 +53,7 @@
           </a>
           <ul class="dropdown-menu">
    <%Photo.all.group(:year).select(:year).each do |year|%>
-            <li><a class="dropdown-item" href="<%=photos_path(photoyear: year)%>">Action</a></li>
+            <li><a class="dropdown-item" href="<%=photos_path(photoyear: year)%>"><%=year%></a></li>
 <%end%>
           </ul>
         </li>

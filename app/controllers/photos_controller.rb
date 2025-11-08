@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
 
   # GET /photos or /photos.json
   def index
-    @photos = Photo.all
+    @photos = Photo.all.where(year: params[:photoyear])
   end
 
   # GET /photos/1 or /photos/1.json
