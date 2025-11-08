@@ -31,9 +31,25 @@
     <%= form.file_field :pic %>
   </div>
     <%= form.fields_for :songs, musicrelease.songs do |address_form| %>
-      <%= address_form.text_field :title, placeholder: "title" %>
-      <%= address_form.text_field :artist, placeholder: "artist" %>
+      <li>
+
+
+        <%= address_form.label :artist %>
+        <%= address_form.text_field :artist %>
+      </li>
+      <li>
+        <%= address_form.label :title %>
+        <%= address_form.text_field :title %>
+      </li>
+      <li>
+        <%= address_form.label :mysong %>
+        <%= address_form.file_field :mysong %>
+      </li>
     <% end %>
+  <div>
+    <%= form.label :mysongs, style: "display: block" %>
+    <%= form.file_field :mysongs, multiple: true %>
+  </div>
 
   <div>
     <%= form.submit %>

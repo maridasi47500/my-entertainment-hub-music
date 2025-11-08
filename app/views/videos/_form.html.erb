@@ -25,6 +25,11 @@
     <%= form.label :link, style: "display: block" %>
     <%= form.text_field :link %>
   </div>
+  <div>
+    <%= form.label :musiccat_id, style: "display: block" %>
+    <%= form.select :musiccat_id, Musiccat.all.collect {|g|[g.name, g.id]} %>
+  </div>
+
 
   <div>
     <%= form.submit %>

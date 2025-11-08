@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_11_04_015048) do
+ActiveRecord::Schema[8.0].define(version: 2025_11_08_031141) do
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "content"
@@ -78,6 +78,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_04_015048) do
     t.integer "nationality_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "content"
   end
 
   create_table "postcats", force: :cascade do |t|
@@ -97,11 +98,21 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_04_015048) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "songs", force: :cascade do |t|
+    t.integer "musicrelease_id"
+    t.string "title"
+    t.string "artist"
+    t.string "mysong"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "videos", force: :cascade do |t|
     t.string "title"
     t.string "pic"
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "musiccat_id"
   end
 end

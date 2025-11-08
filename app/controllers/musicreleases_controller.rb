@@ -1,5 +1,5 @@
 class MusicreleasesController < ApplicationController
-  before_action :set_musicrelease, only: %i[ show edit update destroy ]
+  before_action :set_musicrelease, only: %i[ addasong show edit update destroy ]
 
   # GET /musicreleases or /musicreleases.json
   def index
@@ -13,6 +13,10 @@ class MusicreleasesController < ApplicationController
   # GET /musicreleases/new
   def new
     @musicrelease = Musicrelease.new
+  end
+  def addasong
+    @musicrelease.songs.new
+    render :edit
   end
 
   # GET /musicreleases/1/edit
@@ -65,6 +69,6 @@ class MusicreleasesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def musicrelease_params
-      params.expect(musicrelease: [ :title, :category, :content, :pic ])
+      params.expect(musicrelease: [ :title, :category, :content, :pic, :songs_attributes => {} ])
     end
 end

@@ -35,6 +35,10 @@
     <%= form.label :nationality_id, style: "display: block" %>
     <%= form.select :nationality_id, Nationality.all.collect {|g|[g.name, g.id]} %>
   </div>
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_area :content %>
+  </div>
 
   <div>
     <%= form.submit %>
