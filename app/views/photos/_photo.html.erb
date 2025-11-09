@@ -1,41 +1,17 @@
-<div id="<%= dom_id photo %>">
-  <p>
-    <strong>Name:</strong>
-    <%= photo.name %>
-  </p>
-
-  <p>
-    <strong>Year:</strong>
-    <%= photo.year %>
-  </p>
-
-  <p>
-    <strong>Location:</strong>
-    <%= photo.location_id %>
-  </p>
-
-  <p>
-    <strong>Cat:</strong>
-    <%= photo.cat_id %>
-  </p>
-
-  <p>
-    <strong>Nationality:</strong>
-    <%= photo.nationality_id %>
-  </p>
-
-</div>
  <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
       <img src="/uploads/" alt="Avatar" style="width:300px;height:300px;">
       <h1><%=photo.name%></h1>
-      <p>nombre photo</p>
+      <p class="nbphotos"><%=photo.albumphotos.length%></p>
     </div>
     <div class="flip-card-back">
 
 
-      <p><%=link_to "voir plus", photo%></p>
+
+<%=link_to "&#128065;".html_safe, photo, style: "vertical-align: middle;line-height: 100%;padding: 0;display: inline-block;height: 100%;width: 100%;text-align: center;position: relative;margin: 50px;"%>
+
+
 
     </div>
   </div>

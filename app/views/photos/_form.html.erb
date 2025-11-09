@@ -39,6 +39,22 @@
     <%= form.label :content, style: "display: block" %>
     <%= form.text_area :content %>
   </div>
+<%i=0%>
+    <%= form.fields_for :albumphotos, photo.albumphotos do |address_form| %>
+<%i+=1%>
+<li>
+PIC N°<%=i%>
+</li>
+      <li>
+        <%= address_form.label :title %>
+        <%= address_form.text_field :title %>
+      </li>
+      <li>
+        <%= address_form.label :pic %>
+        <%= address_form.file_field :pic %>
+      </li>
+    <% end %>
+
 
   <div>
     <%= form.submit %>

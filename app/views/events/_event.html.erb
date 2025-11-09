@@ -1,10 +1,12 @@
  <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="/uploads/<%=event.pic%>" alt="Avatar" style="width:300px;height:300px;">
+      <img src="/uploads/<%=event.pic%>" alt="Avatar" style="width:300px;height:200px;">
+      <h6><%=event.title%></h6>
+      <p>written by <%=event.written_by%></p>
     </div>
     <div class="flip-card-back">
-      <h1><%=event.title%></h1>
+
       <p><%=event.content%></p>
       <p><%=link_to "read more", event%></p>
 

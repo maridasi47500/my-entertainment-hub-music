@@ -1,10 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @photo %>
+
+<h1><%=@photo.year%> Grand Photo Gallery</h1>
+<h2><%= @photo.name %> - <%=@photo.albumphotos.length%>
+</h2>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+
+<%=render collection: @photos, as: :photo, partial: "photos/myphoto"%>
+</div>
+
+
 
 <div>
   <%= link_to "Edit this photo", edit_photo_path(@photo) %> |
   <%= link_to "Back to photos", photos_path %>
+<%=link_to "add a pic to this album", addapic_photo_path(@photo)%>
+
 
   <%= button_to "Destroy this photo", @photo, method: :delete %>
 </div>

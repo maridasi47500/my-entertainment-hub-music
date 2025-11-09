@@ -1,13 +1,16 @@
-<div id="<%= dom_id video %>">
-  <p>
+
+  <div class="col">
+    <div class="card">
+<iframe class="card-img-top" width="560" height="315" src="https://www.youtube.com/embed/<%=video.link%>" title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>
+      <div class="card-body">
+        <h5 class="card-title">Card title
     <%= video.title %>
-  </p>
-<p><iframe width="560" height="315" src="https://www.youtube.com/embed/<%=video.link%>" title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe></p>
 
-  <p>
-    <strong>Pic:</strong>
-    <%= video.pic %>
-  </p>
+</h5>
+      </div>
+    </div>
+  </div>
 
 
-</div>
+
+

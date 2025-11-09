@@ -2,15 +2,13 @@
 
 <% content_for :title, "Photos" %>
 
-<h1>(year) Grand Photo Gallery</h1>
+<h1><%=params[:photoyear]%> Grand Photo Gallery</h1>
 
-<div id="photos">
+<div class="row row-cols-1 row-cols-md-2 g-4">
+
   <% @photos.each do |photo| %>
     <%= render photo %>
-    <p>
-      <%= link_to "Show this photo", photo %>
-    </p>
   <% end %>
 </div>
+      <%= link_to "new photo", new_photo_path %>
 
-<%= link_to "New photo", new_photo_path %>

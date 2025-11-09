@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :set_photo, only: %i[ show edit update destroy ]
+  before_action :set_photo, only: %i[ addapic show edit update destroy ]
 
   # GET /photos or /photos.json
   def index
@@ -8,6 +8,7 @@ class PhotosController < ApplicationController
 
   # GET /photos/1 or /photos/1.json
   def show
+    @photos = @photo.albumphotos
   end
 
   # GET /photos/new
@@ -15,8 +16,13 @@ class PhotosController < ApplicationController
     @photo = Photo.new
   end
 
+
   # GET /photos/1/edit
   def edit
+  end
+  def addapic
+    @photo.albumphotos.new
+    render :edit
   end
 
   # POST /photos or /photos.json
@@ -65,6 +71,6 @@ class PhotosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def photo_params
-      params.expect(photo: [ :name, :year, :location_id, :cat_id, :nationality_id, :content ])
+      params.expect(photo: [ :name, :year, :location_id, :cat_id, :nationality_id, :content, :albumphotos_attributes => {} ])
     end
 end

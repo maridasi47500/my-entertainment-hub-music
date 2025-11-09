@@ -3,7 +3,8 @@ class VideosController < ApplicationController
 
   # GET /videos or /videos.json
   def index
-    @videos = Video.all
+    @videos = Video.all.joins(:musiccat).select("videos.*, musiccats.name as musiccatname").to_a.select {|h|h.musiccatname == params[:cat]}
+
   end
 
   # GET /videos/1 or /videos/1.json

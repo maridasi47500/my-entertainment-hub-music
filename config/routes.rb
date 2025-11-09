@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   resources :posts
   resources :events
   resources :movies
-  resources :photos
+  resources :photos do
+    member do
+      get "addapic"
+    end
+  end
+
   resources :videos
   resources :musicreleases do
     member do

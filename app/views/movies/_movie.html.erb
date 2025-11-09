@@ -1,32 +1,21 @@
-<div id="<%= dom_id movie %>">
-  <p>
-    <strong>Title:</strong>
+  <div class="col">
+    <div class="card">
+      <img src="/uploads/<%=movie.pic%>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">
     <%= movie.title %>
-  </p>
 
-  <p>
-    <strong>Content:</strong>
-    <%= movie.content %>
-  </p>
-
-  <p>
-    <strong>Myname:</strong>
+</h5>
+        <p class="card-text">
     <%= movie.myname %>
-  </p>
+</p>
+        <p class="card-text">
+    <%= movie.moviecat.try(:name) %>
+</p>
+        <p class="card-text">
+      <%= link_to "Show this movie", movie %>
 
-  <p>
-    <strong>Cat:</strong>
-    <%= movie.cat_id %>
-  </p>
-
-  <p>
-    <strong>Pic:</strong>
-    <img src="<%= movie.pic %>"/>
-  </p>
-
-  <p>
-    <strong>Link:</strong>
-    <%= movie.link %>
-  </p>
-
-</div>
+</p>
+      </div>
+    </div>
+  </div>

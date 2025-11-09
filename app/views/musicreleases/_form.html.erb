@@ -30,10 +30,13 @@
     <%= form.label :pic, style: "display: block" %>
     <%= form.file_field :pic %>
   </div>
+<%i=0%>
     <%= form.fields_for :songs, musicrelease.songs do |address_form| %>
+<%i+=1%>
+<li>
+SONG N°<%=i%>
+</li>
       <li>
-
-
         <%= address_form.label :artist %>
         <%= address_form.text_field :artist %>
       </li>

@@ -1,6 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @post %>
+<div class="card mb-3" style="max-width: 50%;">
+  <div class="row g-0">
+      <img src="/uploads/<%=@post.pic%>" class="img-fluid rounded-start" alt="...">
+    <div class="col-md-12">
+      <div class="card-body text-center">
+        <p class="card-text"><%=@post.textpic%></p>
+        <h5 class="card-title text-center"><%=@post.title%></h5>
+        <p class="card-text">Written by : <strong><%=@post.written_by%></strong></p>
+      </div>
+      <div class="card-body">
+        <%=simple_format(@post.content)%>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div>
   <%= link_to "Edit this post", edit_post_path(@post) %> |

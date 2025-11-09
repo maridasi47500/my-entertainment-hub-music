@@ -5,11 +5,10 @@
 <h1>Movies</h1>
 
 <div id="movies">
+<div class="row row-cols-1 row-cols-md-2 g-4">
+
   <% @movies.each do |movie| %>
     <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
   <% end %>
 </div>
 
