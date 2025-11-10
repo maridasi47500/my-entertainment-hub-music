@@ -53,3 +53,17 @@
   color: white;
   transform: rotateY(180deg);
 } 
+.slider_container * {
+float:left;
+display:inline-block;
+}
+.mytable, .player {
+width:100%;
+}
+.buttons div {
+	float: left;
+	/* padding: 18px; */
+}
+.mytable td{
+text-align:left;
+}

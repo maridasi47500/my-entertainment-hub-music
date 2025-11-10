@@ -1,4 +1,6 @@
-<div id="<%= dom_id musicrelease %>" class="card" style="width: 60rem;">
+
+<div data-music-release-id="<%=musicrelease.id%>"  id="<%= dom_id musicrelease %>" class="card" style="width: 60rem;">
+
   <div class="card-body">
     <h3 class="card-title mb-3 text-center font-weight-bold site-teal"><%= musicrelease.title %></h3>
   </div>
@@ -11,74 +13,81 @@
 
   <div class="card-body" data-wholecontent="<%=simple_format(musicrelease.content).html_safe%>">
 
+<p class="card-text">
     <%= simple_format(musicrelease.content.truncate(100)) %>
+</p>
 <%if musicrelease.content.length > 100%>
+<p class="card-text">
 <%=link_to "voir plus", "#", onclick: "this.parentElement.innerHTML = this.parentElement.dataset.wholecontent;return false;"%>
+</p>
 <%end%>
-  </div>
-  </div>
-  </div>
-</div>
 
 
 
-<p id="notice"><%= notice %></p>
 
-<div hidden id="lyrichash">{}</div>
-<div hidden id="track_list"><%=#json.dumps(db.Song.track_list())%></div>
-<div hidden id="curr_time_m"></div>
-<div hidden id="mycurrtrack"></div>
-<div class="player">
+
+<div hidden class="lyrichash<%=musicrelease.id%>">{}</div>
+<div hidden class="track_list<%=musicrelease.id%>"><%=raw (musicrelease.songs.track_list)%></div>
+<div hidden class="curr_time_m<%=musicrelease.id%>"></div>
+<div hidden class="mycurrtrack<%=musicrelease.id%>"></div>
+<div >
  
     <!-- Define the section for displaying details -->
-    <div class="details">
-      <div class="now-playing">PLAYING x OF y</div>
-      <div class="track-art"></div>
-      <div class="track-id" hidden></div>
-      <div class="track-name">Track Name</div>
-      <div class="track-artist">Track Artist</div>
-    </div>
+
 <p id="displaylyric"></p>
  
     <!-- Define the section for displaying track buttons -->
-    <div class="buttons">
-      <div class="idontlike" onclick="(confirm('vous n\' aimez pas la chanson') ? idontlike() : console.log('ok'));">
-        &#128078; jaime pas
-      </div>
-</div>
-    <div class="buttons">
-      <div class="prev-track" onclick="prevTrack()">
-        &#x25C0;&#x25C0;
-      </div>
-      <div class="playpause-track" onclick="playpauseTrack()">
-        &#x25B6;
-      </div>
-      <div class="next-track" onclick="nextTrack()">
-        &#x25B6;
-        &#x25B6;
-      </div>
-    </div>
+
  
+
+  </div>
+<ul class="lyrics<%=musicrelease.id%>">
+</ul>
+<%if musicrelease.songs.length > 0%>
+<table class="mytable mytable">
+<tr>
+<td class="player">
     <!-- Define the section for displaying the seek slider-->
     <div class="slider_container">
-      <div class="current-time">00:00</div>
+
       <input type="range" min="1" max="100"
-        value="0" class="seek_slider" onchange="seekTo()">
-      <div class="total-duration">00:00</div>
+        value="0" class="seek_slider<%=musicrelease.id%>">
+
     </div>
  
     <!-- Define the section for displaying the volume slider-->
     <div class="slider_container">
       &#x1F509;
       <input type="range" min="1" max="100"
-        value="99" class="volume_slider" onchange="setVolume()">
+        value="99" class="volume_slider<%=musicrelease.id%>" ">
       &#x1F50A;
+      <div class="current-time<%=musicrelease.id%>">00:00</div>
+      <div class="total-duration<%=musicrelease.id%>">00:00</div>
     </div>
-  </div>
-<ul class="lyrics">
-</ul>
-<table>
-<%@musicrelease.songs.each do |song|%>
+    <div class="details">
+      <div hidden class="now-playing<%=musicrelease.id%>">PLAYING x OF y</div>
+      <div hidden class="track-art<%=musicrelease.id%>"></div>
+      <div hidden class="track-id<%=musicrelease.id%>" hidden></div>
+      <div class="track-name<%=musicrelease.id%>">Track Name</div>
+      <div class="track-artist<%=musicrelease.id%>">Track Artist</div>
+    </div>
+
+    <div class="buttons">
+      <div class="prev-track<%=musicrelease.id%>">
+&#9198;
+      </div>
+      <div class="playpause-track<%=musicrelease.id%>" >
+        &#x25B6;
+      </div>
+      <div class="next-track<%=musicrelease.id%>">
+&#9197;
+      </div>
+    </div>
+</td>
+
+
+</tr>
+<%musicrelease.songs.each do |song|%>
 <tr>
 <td>
 <%=song.title%>
@@ -94,6 +103,7 @@
 </tr>
 <%end%>
 </table>
+<%end%>
 
 
 
@@ -101,4 +111,8 @@
 
 <%=link_to "add a song to this music release", addasong_musicrelease_path(musicrelease)%>
 
+</div>
+  </div>
+  </div>
+  </div>
 </div>
